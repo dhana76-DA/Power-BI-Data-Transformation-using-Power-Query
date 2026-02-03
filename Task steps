@@ -1,0 +1,76 @@
+Steps done in the project:
+
+Donwload link of the file: https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset?utm_source=chatgpt.com
+
+Step 1 — Import Dataset into Power BI
+Open Power BI Desktop.
+On the Home ribbon → Get Data → Text/CSV.
+Select the downloaded HR dataset file (CSV) and click Open.
+Choose Transform Data to open it in Power Query Editor.
+
+Step 2 — Open Power Query Editor
+Power Query Editor lets you perform all data cleaning and transformation before visualization.
+
+Step 3 — Remove Unwanted Columns + Rename Headers
+In Power Query, click on any column you don’t need → Home → Remove Columns.
+Example: columns with metadata (like EmployeeCount, StandardHours) that are constant or irrelevant.
+To rename a column: double-click the header and type a clearer name (e.g., MonthlyIncome, YearsAtCompany).
+
+Step 4 — Fix Missing Values
+Identify missing/null values using View → Column Quality.
+For numeric columns:
+Replace nulls with averages/zeros: Right-click → Replace Values → enter replacement.
+Or remove rows with crucial nulls using Remove Rows → Remove Blank Rows.
+For text columns:
+Replace nulls with “Unknown” or logical default values using Replace Values.
+
+Step 5 — Change Data Types Correctly
+For each column:
+Select the column → Transform → Data Type.
+Set logical types:
+Numbers → Whole Number / Decimal Number
+Yes/No fields → True/False / Text
+Dates → Date type (if relevant).
+Example: Age, MonthlyIncome as numbers; Attrition as text or boolean.
+
+Step 6 — Split / Merge Columns
+Split: If a text column contains multiple pieces of data (e.g., EmployeeName_Full), select column → Split Column → By Delimiter.
+Merge: If you want combined fields (like first+last name), select 2 columns → Add Column → Merge Columns.
+
+Step 7 — Create Conditional Columns
+Conditional columns let you derive new categories like age group and salary band:
+Example — Age Group:
+In Power Query → Add Column → Conditional Column
+Set rules like:
+If Age < 30 → “Young”
+Else If Age between 30 and 50 → “Mid”
+Else → “Senior”
+Example — Salary Band:
+Use similar conditional logic on MonthlyIncome:
+Up to 3000 → “Low”
+3001–7000 → “Medium”
+7001+ → “High”
+
+Step 8 — Apply Changes & Load
+After all cleaning and transformations → Close & Apply.
+Power BI will load the cleaned model to the main workspace for visualization.
+3. Build 2–3 Visuals Using Transformed Data
+
+Once the data is cleaned and loaded, done the Report View and add visualizations. 
+Visual 1 — Attrition by Department
+Chart Type: Clustered bar chart.
+Axis: Department.
+Value: Count of employees where Attrition = Yes.
+This shows which departments have higher attrition rates.
+
+Visual 2 — Count by Age Group
+Chart Type: Pie chart or stacked column chart.
+Legend: Age Group (created via conditional column).
+Value: Count of employees.
+Useful to show distribution of ages in the workforce.
+
+Visual 3 — Salary Band Distribution
+Chart Type: Column chart.
+Axis: Salary Band.
+Value: Employee count.
+Adds insight on how pay levels differ across employees.
