@@ -13,6 +13,7 @@ Power Query Editor lets you perform all data cleaning and transformation before 
 
 Step 3 — Remove Unwanted Columns + Rename Headers
 In Power Query, click on any column you don’t need → Home → Remove Columns.
+Removed columns are: EmployeeCount, Over18, StandardHours, EmployeeNumber. 
 Example: columns with metadata (like EmployeeCount, StandardHours) that are constant or irrelevant.
 To rename a column: double-click the header and type a clearer name (e.g., MonthlyIncome, YearsAtCompany).
 
