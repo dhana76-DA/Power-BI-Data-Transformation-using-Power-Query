@@ -15,7 +15,19 @@ Step 3 — Remove Unwanted Columns + Rename Headers
 In Power Query, click on any column you don’t need → Home → Remove Columns.
 Removed columns are: EmployeeCount, Over18, StandardHours, EmployeeNumber. 
 Example: columns with metadata (like EmployeeCount, StandardHours) that are constant or irrelevant.
-To rename a column: double-click the header and type a clearer name (e.g., MonthlyIncome, YearsAtCompany).
+To rename a column:   | Original Column         | Rename To                  |
+                      | ----------------------- | -------------------------- |
+                      | MonthlyIncome           | Monthly_Income             |
+                      | DailyRate               | Daily_Rate                 |
+                      | HourlyRate              | Hourly_Rate                |
+                      | JobSatisfaction         | Job_Satisfaction           |
+                      | EnvironmentSatisfaction | Environment_Satisfaction   |
+                      | WorkLifeBalance         | Work_Life_Balance          |
+                      | YearsAtCompany          | Years_At_Company           |
+                      | YearsInCurrentRole      | Years_In_Current_Role      |
+                      | YearsSinceLastPromotion | Years_Since_Last_Promotion |
+                      | YearsWithCurrManager    | Years_With_Manager         |
+
 
 Step 4 — Fix Missing Values
 Identify missing/null values using View → Column Quality.
