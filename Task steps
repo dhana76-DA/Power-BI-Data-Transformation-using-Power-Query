@@ -13,8 +13,13 @@ Power Query Editor lets you perform all data cleaning and transformation before 
 
 Step 3 — Remove Unwanted Columns + Rename Headers
 In Power Query, click on any column you don’t need → Home → Remove Columns.
+How to remove:
+Select the columns → Right-click → Remove Columns
 Removed columns are: EmployeeCount, Over18, StandardHours, EmployeeNumber. 
 Example: columns with metadata (like EmployeeCount, StandardHours) that are constant or irrelevant.
+
+How to rename:
+Double-click column header → rename
 To rename a column:   | Original Column         | Rename To                  |
                       | ----------------------- | -------------------------- |
                       | MonthlyIncome           | Monthly_Income             |
@@ -31,6 +36,11 @@ To rename a column:   | Original Column         | Rename To                  |
 
 Step 4 — Fix Missing Values
 Identify missing/null values using View → Column Quality.
+Steps:
+Go to View → Column Quality
+Check for null or empty values
+“The dataset was checked for missing values using Column Quality, and no null values were detected.”
+
 For numeric columns:
 Replace nulls with averages/zeros: Right-click → Replace Values → enter replacement.
 Or remove rows with crucial nulls using Remove Rows → Remove Blank Rows.
@@ -40,15 +50,40 @@ Replace nulls with “Unknown” or logical default values using Replace Values.
 Step 5 — Change Data Types Correctly
 For each column:
 Select the column → Transform → Data Type.
-Set logical types:
-Numbers → Whole Number / Decimal Number
-Yes/No fields → True/False / Text
-Dates → Date type (if relevant).
-Example: Age, MonthlyIncome as numbers; Attrition as text or boolean.
+Whole Number
+Age
+DistanceFromHome
+Monthly_Income
+NumCompaniesWorked
+PercentSalaryHike
+TotalWorkingYears
+Years_At_Company
+
+Text
+Attrition
+Department
+JobRole
+Gender
+MaritalStatus
+BusinessTravel
+EducationField
+
+✔ True/False (Optional)
 
 Step 6 — Split / Merge Columns
-Split: If a text column contains multiple pieces of data (e.g., EmployeeName_Full), select column → Split Column → By Delimiter.
-Merge: If you want combined fields (like first+last name), select 2 columns → Add Column → Merge Columns.
+Split / Merge Columns (Where Required)
+Merge Example (Optional)
+Create a descriptive column:
+Merge:
+Department + JobRole
+
+Steps:
+Select both columns
+Add Column → Merge Columns
+Separator: " - "
+New column name: Dept_JobRole
+
+(This helps in role-based analysis)
 
 Step 7 — Create Conditional Columns
 Conditional columns let you derive new categories like age group and salary band:
@@ -67,7 +102,6 @@ Up to 3000 → “Low”
 Step 8 — Apply Changes & Load
 After all cleaning and transformations → Close & Apply.
 Power BI will load the cleaned model to the main workspace for visualization.
-3. Build 2–3 Visuals Using Transformed Data
 
 Once the data is cleaned and loaded, done the Report View and add visualizations. 
 Visual 1 — Attrition by Department
@@ -84,6 +118,7 @@ Useful to show distribution of ages in the workforce.
 
 Visual 3 — Salary Band Distribution
 Chart Type: Column chart.
-Axis: Salary Band.
-Value: Employee count.
+X-Axis: Age group
+Y-Axis: Monthly rate
+Value: Salary Band
 Adds insight on how pay levels differ across employees.
