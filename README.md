@@ -39,6 +39,8 @@ Axis: Salary Band (Low, Medium, High).
 Value: Count of Employees.
 Insight: Shows whether the majority of employees are in entry-level or senior pay brackets.
 
+The IBM HR Analytics dataset was imported into Power BI and transformed using Power Query. Unnecessary columns such as EmployeeCount, Over18, StandardHours, and EmployeeNumber were removed, and column headers were renamed for better clarity. Data types were corrected, and the dataset was validated for missing values. Conditional columns for Age Group and Salary Band were created to enhance analysis. The transformed data was loaded into Power BI, and visuals such as Attrition by Department, Employee Distribution by Age Group, and Salary Band Analysis were created to derive HR insights
+
 Final Results & Insights
 High-Risk Departments: Initial analysis typically shows higher attrition in Sales and Research & Development roles.
 Demographic Trends: Younger employees (under 30) often show higher attrition rates compared to older age groups.
