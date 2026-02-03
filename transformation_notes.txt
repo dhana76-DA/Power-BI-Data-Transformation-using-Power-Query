@@ -1,0 +1,65 @@
+Power BI – Power Query Data Transformation Notes
+Project: HR Analytics (IBM Employee Attrition)
+
+1. Data Import
+- Imported WA_Fn-UseC_-HR-Employee-Attrition.csv into Power BI Desktop using Get Data → Text/CSV.
+- Opened Power Query Editor to perform all cleaning and transformation steps before modeling.
+
+2. Column Removal
+- Removed columns with no analytical value or constant values across rows:
+  EmployeeCount, Over18, StandardHours, EmployeeNumber.
+- This reduced noise and improved model clarity.
+
+3. Column Renaming
+- Renamed technical headers to business-friendly names for readability:
+  MonthlyIncome → Monthly_Income
+  DailyRate → Daily_Rate
+  HourlyRate → Hourly_Rate
+  JobSatisfaction → Job_Satisfaction
+  EnvironmentSatisfaction → Environment_Satisfaction
+  WorkLifeBalance → Work_Life_Balance
+  YearsAtCompany → Years_At_Company
+  YearsInCurrentRole → Years_In_Current_Role
+  YearsSinceLastPromotion → Years_Since_Last_Promotion
+  YearsWithCurrManager → Years_With_Manager
+
+4. Missing Values Check
+- Enabled View → Column Quality to inspect null values.
+- No missing values were detected in key analytical columns.
+- Dataset was confirmed clean for further analysis.
+
+5. Data Type Corrections
+- Set numeric columns (Age, Monthly_Income, DistanceFromHome, Years_At_Company) to Whole Number.
+- Set categorical columns (Attrition, Department, JobRole, Gender, MaritalStatus) to Text.
+- Verified data types to avoid aggregation and visualization issues.
+
+6. Split / Merge Columns
+- Created a merged column (optional) combining Department and JobRole to support role-based analysis.
+- Used Add Column → Merge Columns with a hyphen separator.
+
+7. Conditional Columns
+- Created Age_Group column using conditional logic:
+  Age < 30 = Young
+  Age 30–45 = Mid
+  Age > 45 = Senior
+- Created Salary_Band column based on Monthly_Income:
+  ≤ 3000 = Low
+  3001–7000 = Medium
+  > 7000 = High
+- Both columns were set to Text data type.
+
+8. Apply Changes
+- Clicked Close & Apply to load the transformed dataset into the Power BI data model.
+
+9. Measures Used
+- Created a DAX measure:
+  Employee Count = COUNTROWS(Employee Attrition Table)
+- Used the measure consistently across visuals for accurate aggregation.
+
+10. Outcome
+- Cleaned and transformed dataset enabled accurate visualizations.
+- Dashboard insights include attrition by department, workforce age distribution, and salary band structure.
+
+Final Results & Insights Total Employee Records Analyzed: 1,470. Key Finding: Workforce stability is centered in the 30–45 age bracket (Mid), which also receives the highest compensation. Critical Area: The Research & Development department requires targeted retention strategies as it is the largest contributor to turnover metrics.
+
+Reserach & development 971 employyes attrition, Sales has 446, Human resources 63. Reserach & development has the highest attrition and Human resourecs has the low attrition rate.  Mid age has highest 871 employees with 59,.25%, Young age of 326 employees with 22.18%,  Senior age of 273 employees with 18.57%. This insight has the Mid level has the highest salary and distribution and young has the lowest one. 
