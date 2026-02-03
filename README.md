@@ -42,9 +42,14 @@ Insight: Shows whether the majority of employees are in entry-level or senior pa
 The IBM HR Analytics dataset was imported into Power BI and transformed using Power Query. Unnecessary columns such as EmployeeCount, Over18, StandardHours, and EmployeeNumber were removed, and column headers were renamed for better clarity. Data types were corrected, and the dataset was validated for missing values. Conditional columns for Age Group and Salary Band were created to enhance analysis. The transformed data was loaded into Power BI, and visuals such as Attrition by Department, Employee Distribution by Age Group, and Salary Band Analysis were created to derive HR insights
 
 Final Results & Insights
-High-Risk Departments: Initial analysis typically shows higher attrition in Sales and Research & Development roles.
-Demographic Trends: Younger employees (under 30) often show higher attrition rates compared to older age groups.
-Pay Correlation: Employees in the Low Salary Band are significantly more likely to leave the company.
+Total Employee Records Analyzed: 1,470.
+Key Finding: Workforce stability is centered in the 30–45 age bracket (Mid), which also receives the highest compensation.
+Critical Area: The Research & Development department requires targeted retention strategies as it is the largest contributor to turnover metrics.
+
+Reserach & development 971 employyes attrition, Sales has 446, Human resources 63. Reserach & development has the highest attrition and Human resourecs has the low attrition rate. 
+Mid age has highest 871 employees with 59,.25%, Young age of 326 employees with 22.18%,  Senior age of 273 employees with 18.57%.
+This insight has the Mid level has the highest salary and distribution and young has the lowest one. 
+
 
 Future Improvements & Recommendations
 To enhance this project further, the following steps are recommended:
